@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Gaurav's Cafe <span class="tou-node" id="tou-0-8a0ee740-b586-439e-8e63-e5648093d881"></span></h1>
+        <p class="lead text-muted">Find the best Cafe <span class="tou-node" id="tou-0-876d04c0-717b-4354-aebb-8804d0c8c3b9"></span> only at our website. We have tried to provide the best cafe's list in London.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+ {% for cafe in cafe_list %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ cafe.img_url }}" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>
+            <div class="card-body">
+                <h5 class="card-title">{{ cafe.name}}</h5>
+              <p class="card-text"><strong>Location: </strong>{{ cafe.location }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href="{{ url_for('cafe_details', id=cafe.id) }}" class="btn btn-sm btn-outline-secondary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+{% include 'footer.html' %}

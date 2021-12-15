@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+<div class="card bg-dark text-white mb-3">
+    <img src="{{ details.img_url }}" class="card-img-top img-fluid" alt="...">
+    <div class="card-img-overlay "><h1 class="card-title ms-1 text-center">{{ details.name }}</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ms-1">
+            <div class="col">
+                <div class="card text-white bg-dark mb-3 ">
+                    <div class="card-header">Coffee Price</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ details.coffee_price }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Location</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ details.location }} &nbsp; &nbsp; &nbsp; <a type="button" class="btn btn-outline-success" href="{{ details.map_url }}">View on Maps</a></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Is it has Wifi?</div>
+                    <div class="card-body">
+                        {% if details.has_wifi %}
+                            <p class="card-text">Yes</p>
+                        {% else %}
+                            <p class="card-text">Yes</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">How many Seats?</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ details.seats }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Is it has Sockets?</div>
+                    <div class="card-body">
+                        {% if details.has_sockets %}
+                            <p class="card-text">Yes</p>
+                        {% else %}
+                            <p class="card-text">Yes</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Can we take calls?</div>
+                    <div class="card-body">
+                        {% if details.can_take_calls %}
+                            <p class="card-text">Yes</p>
+                        {% else %}
+                            <p class="card-text">Yes</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
